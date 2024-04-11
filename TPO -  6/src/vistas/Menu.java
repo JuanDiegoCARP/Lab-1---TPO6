@@ -65,6 +65,11 @@ private TreeSet<Producto> productos=new TreeSet<>();
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("consultas");
+        jMenu2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu2ActionPerformed(evt);
+            }
+        });
 
         jMenuItem3.setText("Por rubro");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -75,6 +80,11 @@ private TreeSet<Producto> productos=new TreeSet<>();
         jMenu2.add(jMenuItem3);
 
         jMenuItem2.setText("Por nombre");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuItem4.setText("Por precio");
@@ -118,6 +128,19 @@ private TreeSet<Producto> productos=new TreeSet<>();
         escritorio.add(ldp);
         escritorio.moveToFront(ldp);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
+        
+    }//GEN-LAST:event_jMenu2ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        escritorio.removeAll();
+        escritorio.repaint();
+        busquedaPorNombre nombre =new busquedaPorNombre(productos);
+        nombre.setVisible(true);
+        escritorio.add(nombre);
+        escritorio.moveToFront(nombre);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
