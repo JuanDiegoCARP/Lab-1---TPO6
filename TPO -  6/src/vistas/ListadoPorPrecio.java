@@ -173,7 +173,8 @@ public class ListadoPorPrecio extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
          borrarFilas();
          double num2=0;
-          
+         double num=0;
+        num = Integer.parseInt(jtPrecioBajo.getText());  
        try {
             num2 = Integer.parseInt(jtPrecioAlto.getText());
         } catch (Exception e) {
@@ -185,7 +186,7 @@ public class ListadoPorPrecio extends javax.swing.JInternalFrame {
        
        
         for (Producto p : productos) {
-            if (p.getPrecio()<=num2) {               
+            if (p.getPrecio()<=num2&&p.getPrecio()>=num) {               
                 modelo.addRow(new Object[]{
                     p.getCodigo(),
                     p.getDescripcion(),
